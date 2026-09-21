@@ -3,7 +3,7 @@
 @plugin "daisyui";
 
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: "Manrope";
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

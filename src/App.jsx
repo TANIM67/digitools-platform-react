@@ -1,4 +1,5 @@
 import './App.css'
+import MiddleBadge from './Badge/MiddleBadge'
 import HeroSection from './HeroSection/HeroSection'
 import Navbar from './Navbar/Navbar'
 
@@ -10,6 +11,7 @@ function App() {
         <div>
           <Navbar></Navbar>
           <HeroSection></HeroSection>
+          <MiddleBadge></MiddleBadge>
         </div>
       </section>
     </>

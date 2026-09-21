@@ -6,8 +6,8 @@ const HeroSection = () => {
     <div className="hero min-h-screen bg-base-100 px-6 lg:px-24">
       <div className="hero-content flex-col lg:flex-row gap-12 max-w-7xl mx-auto w-full justify-between">
         
-        <div className="note-point left-side flex flex-col items-start text-left max-w-xl">
-          <div className="flex items-center gap-2 bg-purple-100 text-purple-700 px-3 py-1.5 rounded-full text-xs font-semibold mb-6">
+        <div className="left-side flex flex-col items-start text-left max-w-xl">
+          <div className="note-point flex items-center gap-2 bg-purple-100 text-purple-700 px-3 py-1.5 rounded-full text-xs font-semibold mb-6">
             <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
             New: AI-Powered Tools Available
           </div>
@@ -37,7 +37,7 @@ const HeroSection = () => {
           <div className="relative max-w-md w-full  rounded-2xl overflow-hidden shadow-sm border border-gray-100">
             <img 
               src={banner} 
-              alt="Digital Workflow Preview" 
+              alt="" 
               className="w-full h-full object-cover"
             />
           </div>
