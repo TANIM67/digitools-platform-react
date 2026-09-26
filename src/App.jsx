@@ -1,7 +1,9 @@
+import { Package } from 'lucide-react'
 import './App.css'
 import MiddleBadge from './Badge/MiddleBadge'
 import HeroSection from './HeroSection/HeroSection'
 import Navbar from './Navbar/Navbar'
+import Packages from './Packages/Packages'
 
 function App() {
 
@@ -12,6 +14,7 @@ function App() {
           <Navbar></Navbar>
           <HeroSection></HeroSection>
           <MiddleBadge></MiddleBadge>
+          <Packages></Packages>
         </div>
       </section>
     </>
