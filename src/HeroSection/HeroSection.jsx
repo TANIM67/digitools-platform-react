@@ -27,7 +27,7 @@ const HeroSection = () => {
               Explore Products
             </button>
             <button className="btn btn-outline border-purple-600 text-purple-600 hover:bg-purple-50 hover:border-purple-700 hover:text-purple-700 rounded-full px-8 normal-case gap-2">
-              <i class="fa-solid fa-play"></i>
+              <i className="fa-solid fa-play"></i>
               Watch Demo
             </button>
           </div>

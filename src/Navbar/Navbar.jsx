@@ -11,8 +11,8 @@ const Navbar = () => {
                 </div>
                 <div>
                     {
-                        navLink.map(nav =>
-                            <a className='mr-5 text-gray-700' href="">{nav}</a>
+                        navLink.map((nav, index) =>
+                            <a key={index} className='mr-5 text-gray-700' href="">{nav}</a>
                         )
                     }
                 </div>

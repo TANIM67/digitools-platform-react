@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
+import Card from './Card';
 
 const Packages = () => {
     const [products, setProducts] = useState(true);
-
+    const url = '/public/data.json';
+    
+    const allInfo = fetch(url).
+                    then((res) => res.json())
+    
     return (
         <div className='mt-20 p-12'>
             <div className='headings w-4/12 mx-auto'>
@@ -13,6 +18,10 @@ const Packages = () => {
                     <button className={`btn rounded-3xl text-xl ${products ? 'text-black' : 'text-white'} ${products ? 'bg-white' : 'bg-blue-700'}`} onClick={()=> setProducts(false)}>Carts</button>
                 </div>
             </div>
+            
+            <Suspense fallback = {<h2 className='text-3xl m-7 w-50 mx-auto'>Data is loading</h2>}>
+                <Card allInfo={allInfo}></Card>
+            </Suspense>
         </div>
     );
 };
