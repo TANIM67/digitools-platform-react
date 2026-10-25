@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/products/writing_2327400 1.png'
+import Cart from '../Cart/Cart';
 
-const CardInfo = ({ card }) => {
-    console.log(card);
+const CardInfo = ({ card, addCart, isAdded }) => {
+
   return (
     <div className=''>
-      <div className="card w-96 bg-base-100 shadow-sm border border-base-200">
 
+      <div className="card w-96 bg-base-100 shadow-sm border border-base-200">
         <div className="card-body">
           <div className="flex justify-between items-start">
             <div className="avatar placeholder">
@@ -19,7 +20,6 @@ const CardInfo = ({ card }) => {
             </span>
           </div>
 
-          
           <div className="mt-4">
             <h2 className="text-3xl font-bold text-neutral">{card.name}</h2>
             <p className="text-sm text-base-content/70 mt-2 leading-relaxed">
@@ -32,27 +32,31 @@ const CardInfo = ({ card }) => {
             <span className="text-md text-base-content/60 font-medium">/Mo</span>
           </div>
 
-          
           <ul className="mt-5 flex flex-col gap-3 text-sm text-base-content/80">
             <li className="flex items-center gap-2">
               <span>
                 {
-                    card.features.map (feature => 
-                    <h1 className='flex gap-2 items-center'>
-                        <i class="fa-solid fa-check"></i>
-                        {feature}
+                  card.features.map((feature, index) =>
+                    <h1 key={index} className='flex gap-2 items-center'>
+                      <i className="fa-solid fa-check"></i>
+                      {feature}
                     </h1>)
                 }
               </span>
             </li>
-            
+
           </ul>
 
           <div className="mt-6">
-            <button className="btn bg-[#8A2BE2] hover:bg-[#7A1FA2] text-white btn-block rounded-full border-none normal-case text-lg py-3 h-auto">
-              Buy Now
+            <button
+              disabled={isAdded}
+              onClick={() => addCart(card)}
+              className="btn bg-[#8A2BE2] hover:bg-[#7A1FA2] text-white btn-block rounded-full border-none normal-case text-lg py-3 h-auto disabled:opacity-60"
+            >
+              {isAdded ? "Added to Cart" : "Buy Now"}
             </button>
           </div>
+          {/* {buynow ? <Cart></Cart> : null} */}
         </div>
       </div>
     </div>

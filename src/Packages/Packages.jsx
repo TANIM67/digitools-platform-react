@@ -1,9 +1,16 @@
 import React, { Suspense, useState } from 'react';
 import Card from './Card';
+import Cart from '../Cart/Cart';
 
-const Packages = () => {
+const Packages = ({}) => {
     const [products, setProducts] = useState(true);
     const url = '/public/data.json';
+
+    const [allCarts, setAllCarts] = useState([]);
+    const handleCarts = (allCarts) =>{
+        setAllCarts(prev => prev.some(c => c.id === allCarts.id) ? prev : [...prev, allCarts]);
+        // console.log(allCarts);
+    }
     
     const allInfo = fetch(url).
                     then((res) => res.json())
@@ -20,7 +27,9 @@ const Packages = () => {
             </div>
             
             <Suspense fallback = {<h2 className='text-3xl m-7 w-50 mx-auto'>Data is loading</h2>}>
-                <Card allInfo={allInfo}></Card>
+                <div>
+                    {products ? <Card allInfo={allInfo} allCarts={allCarts} handleCarts={handleCarts}></Card> : <Cart allCarts={allCarts}></Cart>}
+                </div>
             </Suspense>
         </div>
     );
