@@ -4,16 +4,13 @@ import Cart from '../Cart/Cart';
 
 const Packages = ({}) => {
     const [products, setProducts] = useState(true);
-    const url = '/public/data.json';
 
     const [allCarts, setAllCarts] = useState([]);
     const handleCarts = (allCarts) =>{
         setAllCarts(prev => prev.some(c => c.id === allCarts.id) ? prev : [...prev, allCarts]);
-        // console.log(allCarts);
     }
     
-    const allInfo = fetch(url).
-                    then((res) => res.json())
+    const allInfo = fetch('/data.json').then(res => res.json());
     
     return (
         <div className='mt-20 p-12'>
